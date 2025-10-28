@@ -21,8 +21,8 @@
               <div class="relative w-20 h-20 bg-gradient-to-br from-hotel-gold via-yellow-500 to-hotel-gold rounded-2xl flex items-center justify-center p-3 shadow-2xl shadow-hotel-gold/50 group-hover:shadow-hotel-gold/70 transition-all duration-500 group-hover:scale-105">
                 <div class="absolute inset-0 bg-white/20 rounded-2xl backdrop-blur-sm"></div>
                 <img 
-                  src="/src/assets/logo.png" 
-                  alt="LuxeStay Logo" 
+                  :src="siteConfig.logoPath" 
+                  :alt="`${siteConfig.brandName} Logo`" 
                   class="w-full h-full object-contain relative z-10 filter brightness-125 contrast-125 drop-shadow-lg"
                 />
               </div>
@@ -56,7 +56,7 @@
           <div class="flex items-center gap-3">
             <!-- Login Button -->
             <button 
-              @click="$emit('showLogin')" 
+              @click="router.push('/')" 
               class="px-6 py-2.5 bg-white/5 backdrop-blur border border-hotel-gold/50 text-hotel-gold hover:bg-hotel-gold hover:text-black hover:border-hotel-gold font-semibold rounded-xl transition-all duration-300 hover:scale-105 hover:shadow-lg hover:shadow-hotel-gold/30"
             >
               <UserIcon class="h-4 w-4 inline mr-2" />
@@ -383,7 +383,7 @@
           <div>
             <div class="flex items-center space-x-3 mb-6">
               <div class="w-20 h-20 bg-gradient-to-br from-hotel-gold to-yellow-500 rounded-xl flex items-center justify-center p-3 shadow-lg shadow-hotel-gold/30">
-                <img src="/src/assets/logo.png" alt="LuxeStay Logo" class="w-full h-full object-contain filter brightness-110" />
+                <img :src="siteConfig.logoPath" :alt="`${siteConfig.brandName} Logo`" class="w-full h-full object-contain filter brightness-110" />
               </div>
               <span class="text-3xl font-serif font-bold text-white">{{ siteConfig.brandName }}</span>
             </div>
@@ -483,7 +483,7 @@
           <div class="text-center mb-4">
             <div class="w-20 h-20 md:w-24 md:h-24 bg-gradient-to-br from-hotel-gold to-yellow-600 rounded-xl flex items-center justify-center mx-auto mb-3 shadow-lg shadow-hotel-gold/30 relative">
               <div class="absolute inset-0 bg-white/10 rounded-xl"></div>
-              <img src="/src/assets/logo.png" alt="LuxeStay" class="w-full h-full object-contain relative z-10 p-3 filter brightness-110 contrast-110" />
+              <img :src="siteConfig.logoPath" :alt="siteConfig.brandName" class="w-full h-full object-contain relative z-10 p-3 filter brightness-110 contrast-110" />
             </div>
             <h2 class="text-xl md:text-2xl font-serif font-bold text-white mb-1">Reserve Your Suite</h2>
             <p class="text-gray-400 text-xs md:text-sm">Begin your extraordinary journey</p>
@@ -613,7 +613,10 @@
 <script setup>
 import { ref, onMounted, onUnmounted } from 'vue'
 import { useWindowScroll } from '@vueuse/core'
+import { useRouter } from 'vue-router'
 import { siteConfig } from '../config/site.js'
+
+const router = useRouter()
 import {
   BuildingOfficeIcon, 
   ChevronDownIcon,

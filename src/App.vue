@@ -1,10 +1,6 @@
 <script setup>
-import { ref, onMounted } from 'vue'
-import HotelLandingPro from './components/HotelLandingPro.vue'
-import LoginPage from './components/LoginPage.vue'
+import { onMounted } from 'vue'
 import 'aos/dist/aos.css'
-
-const currentView = ref('main') // 'main' or 'login'
 
 onMounted(() => {
   import('aos').then(AOS => {
@@ -16,21 +12,12 @@ onMounted(() => {
     })
   })
 })
-
-const showLogin = () => {
-  currentView.value = 'login'
-}
-
-const showMain = () => {
-  currentView.value = 'main'
-}
 </script>
 
 <template>
   <div>
     <Transition name="page" mode="out-in">
-      <HotelLandingPro v-if="currentView === 'main'" @showLogin="showLogin" />
-      <LoginPage v-else @goToMain="showMain" />
+      <router-view />
     </Transition>
   </div>
 </template>

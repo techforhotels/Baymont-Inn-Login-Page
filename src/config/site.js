@@ -1,9 +1,11 @@
 // Site configuration file - Customers can customize all brand information here
+import logoImage from '../assets/logo.png'
+
 export const siteConfig = {
   // Brand information
   brandName: 'Your Hotel',
   brandSubtitle: 'Luxury Hotels',
-  logoPath: '/src/assets/logo.png',
+  logoPath: logoImage,
 
   // Contact information (example data - please replace with actual info)
   contact: {

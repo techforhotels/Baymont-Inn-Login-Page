@@ -127,7 +127,7 @@
         <div class="mt-8 text-center">
           <a 
             href="/"
-            @click.prevent="$emit('goToMain')"
+            @click.prevent="router.push('/home')"
             class="inline-flex items-center gap-2 text-gray-400 hover:text-hotel-gold transition-colors group"
           >
             <ArrowLeftIcon class="h-4 w-4 group-hover:-translate-x-1 transition-transform" />
@@ -210,8 +210,11 @@
 
 <script setup>
 import { ref, onMounted, onUnmounted } from 'vue'
+import { useRouter } from 'vue-router'
 import { useAuthStore } from '../stores/auth'
 import { siteConfig } from '../config/site.js'
+
+const router = useRouter()
 import {
   BuildingOfficeIcon,
   EnvelopeIcon,
