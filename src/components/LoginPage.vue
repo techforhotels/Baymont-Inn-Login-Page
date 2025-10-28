@@ -83,11 +83,11 @@
                   v-model="loginForm.remember"
                   class="w-4 h-4 rounded border-gray-600 text-hotel-gold focus:ring-hotel-gold focus:ring-offset-gray-900"
                 />
-                <span class="group-hover:text-white transition-colors">Remember me</span>
+                <span class="group-hover:text-white transition-colors">Term of service check box require to connect,I can provide text for terms</span>
               </label>
-              <a href="#" class="text-hotel-gold hover:text-yellow-500 transition-colors font-semibold">
+              <!-- <a href="#" class="text-hotel-gold hover:text-yellow-500 transition-colors font-semibold">
                 Need Help?
-              </a>
+              </a> -->
             </div>
 
             <!-- Login Button -->
@@ -98,7 +98,7 @@
             >
               <span v-if="!isLoading" class="flex items-center gap-3">
                 <SparklesIcon class="h-5 w-5 group-hover:rotate-12 transition-transform" />
-                Sign In to Your Account
+                Connect
                 <ArrowRightIcon class="h-5 w-5 group-hover:translate-x-1 transition-transform" />
               </span>
               <span v-else class="flex items-center gap-2">
