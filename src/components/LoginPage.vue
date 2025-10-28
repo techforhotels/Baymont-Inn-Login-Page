@@ -124,7 +124,7 @@
 
 
         <!-- Back to Main -->
-        <div class="mt-8 text-center">
+        <!-- <div class="mt-8 text-center">
           <a 
             href="/"
             @click.prevent="router.push('/home')"
@@ -133,7 +133,7 @@
             <ArrowLeftIcon class="h-4 w-4 group-hover:-translate-x-1 transition-transform" />
             Back to Main Page
           </a>
-        </div>
+        </div> -->
       </div>
     </div>
 
